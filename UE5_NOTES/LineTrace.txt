@@ -1,0 +1,21 @@
+1. create a grabber tracer in project settings and turn it to be ignored by default
+2. restart the engine
+REMEMBER TO THEN ENABLE THE TRACER ON FOR THE ACTOR WHICH WE WANNA INTERACT WITH!!!!!
+3. create a scene component (grabber)
+
+4. to draw a line u gotta:
+	- get the starting position which is gonna be the components position (GetComponentLocation())
+	- get the end position which is the start position + the distance of an arm * forward vector
+	- and lastly use DrawDebugLine(GetWorld(), StartPosition, EndPosition, FColor::Emerald)
+
+5. now whether to know if we have hit anything we gotta use something called 
+GetWorld()->SweepSingleByChannel(OutResult, StartPosition, EndPosition, FQuat::Identity, Channel of the trace which can be found in config folder under DefaultEngine.ini file, Sphere)
+
+SweepSingleByChannel returns a bool, it says whether we've hit anything
+
+To create a Sphere --> FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius)
+Grab Radius is basically sphere's diameter
+OutResult stores actors that we have hit (if any)
+To get the actor's name OutResult.GetActor()->GetActorNameOrLabel();
+
+In order to work properly camera component should have the grabber scene component on it

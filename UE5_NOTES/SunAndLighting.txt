@@ -1,0 +1,5 @@
+1. place sky light 
+2. place directional light in the scene
+3. search for sky sphere in the engine folder
+4. drag it to the scene
+5. connect the sphere to the directional light actor

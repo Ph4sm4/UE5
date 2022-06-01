@@ -1,0 +1,14 @@
+1. Add the Actor Component onto the element
+2. UPROPERTIES:
+	- Position Offset (how far to move from the current position)
+	- Move Speed (in seconds)
+	- Should move
+3. gotta get the starting pos by GetOwner()->GetActorLocation()
+
+4. then in the tick component:
+	- get the current location 
+	- set the target location (start + offset)
+	- speed (by how much should we move during this tick) distance between current and target 		location / movespeed
+	- new location is gonna be obv a FVector = FMath::VInterpConstantTo(currLocation, Targetlocation, DeltaTime, speed);
+
+5. set the actor location by GetOwner()->SetActorLocation(newLocation);

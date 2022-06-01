@@ -1,0 +1,7 @@
+1. open the asset in the editor (for example the floor)
+2. add default box collision
+3. select the collision box
+4. scroll down to "collision"
+5. "primitives" -> "boxes"
+6. set the Z center to be under the texture a bit, like -10
+7. set the Z extent to be 10, or just the opposite

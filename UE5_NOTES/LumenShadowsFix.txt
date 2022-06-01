@@ -1,0 +1,4 @@
+1. search the material of the element
+2. find the parent of that element
+3. open the material in the editor
+4. disconnect pixel depth offset

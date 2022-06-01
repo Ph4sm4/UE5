@@ -1,0 +1,10 @@
+1. go to project settings and search for "Input"
+2. choose action mappings 
+3. add new and bind everything
+4. then go to the class in which u wanna for instance declare a function thats gonna fire off after pressing left mouse button
+5. declare a function (Grab())
+	- UFUNCTION(BlueprintCallable) TYPE MyFunction()
+	- blueprintcallable enables using the function in the blueprint editor
+6. then in blueprints go and add a starting pin that is named as you have previously called it, for example Grab (In blueprints its gonna be Input Action Grab)
+
+7. drag a pin and choose the MyFunction(), if it does not appear, restart the engine
