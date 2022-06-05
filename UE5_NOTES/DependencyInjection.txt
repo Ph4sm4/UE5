@@ -1,0 +1,12 @@
+Create a UFUNCTION(BlueprintCallable) for example SetMover(UMover* NewMover);
+
+then add
+
+private: UMover* Mover;
+
+then in the blueprints, onbegin play
+
+drag the set mover, add inject the mover component
+
+after that u are good to go with using the Mover pointer
+

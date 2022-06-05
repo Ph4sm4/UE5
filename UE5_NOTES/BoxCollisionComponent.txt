@@ -1,0 +1,19 @@
+Go to the element in which you want to add the component
+
+select add c++ component, all classes and search for box collision
+
+
+then in c++ you gotta copy the UCLASS from other component, the syntax is: 
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+
+optionally add a constructor in which u can enable ticking by:
+PrimaryComponentTick.bCanEverTick = true;
+
+add these as well: 
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

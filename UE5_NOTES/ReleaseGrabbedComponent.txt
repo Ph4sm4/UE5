@@ -1,0 +1,9 @@
+in order to do so we gotta use the function ReleaseComponent() on the pointer to the physics handle
+
+we do that just like so:
+
+UPhysicsHandleComponent* handle = GetPhysicsHandle();
+
+handle->ReleaseComponent();
+
+obv we should first check if the handle is nullptr, if so then return; 

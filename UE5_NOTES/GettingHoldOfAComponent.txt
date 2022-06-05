@@ -1,0 +1,8 @@
+1. to get a hold of another component from within our component we have to use:
+
+	GetOwner()->FindComponentByClass<ClassName>();
+2. it returns a pointer so if we were to store it in a variable we would have to:
+	ClassName* var_name = ...
+for instance for class UPhysicsHandleComponent it would look like this:
+	
+UPhysicsHandleComponent* physicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();

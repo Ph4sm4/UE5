@@ -1,0 +1,5 @@
+DrawDebugSphere(GetWorld(), Center of the sphere, radius, segments, color, persist, life time);
+
+center is a vector which probably is going to be the vector which is at the end of our line trace, so that the sphere will be drawn around that hit point
+
+basically the sphere center is the point around which the sphere is gonna get drawn

@@ -1,0 +1,16 @@
+In order to attach a component to another component we first must try to Cast that Actors Root Component to check if it is the UPrimitiveComponent cause we do not want to attach the actor for instance
+
+this checking can be done by casting the root component to UPrimitiveComponent, if the casting is successfull it will return a pointer to that UPrimitiveComponent - nullptr otherwise
+
+the casting will be true if the rootcomponent is somehow inheriting from the UPrimitiveComponent
+
+after that we have to check if the casting was successfull (e.g. != nullptr)
+
+then we can get the Actor->AttachToComponent(component to attach, FAttachmentTransformRules)
+
+in our case it was Actor->AttachToComponent(this, FAttachmentTransformRules::KeepWorldTransform);
+
+then we can disable physics, by:
+
+Component->SetStimulatePhysics(false);
+

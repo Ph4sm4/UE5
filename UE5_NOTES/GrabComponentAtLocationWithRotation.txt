@@ -1,0 +1,26 @@
+UPrimitiveComponent* HitComponent = OutResult.GetComponent();
+HitComponent->WakeAllRigidBodies();
+physicsHandle->GrabComponentAtLocationWithRotation(HitComponent,
+NAME_None, OutResult.ImpactPoint, GetComponentRotation());
+
+the outresult.getcomponent is gonna return the pointer to the component that ve have hit
+
+WakeAllRigidBodies() function is gonna "wake" up all the elements (just before we wanna grab it) that are responsible for detecting collision and stuff like that, so that there are no problems while grabbing it
+otherwise they are "asleep" for performance sake
+
+GrabComponentAtLocationWithRotation(the pointer to the component that we ve hit, Name if we dont wan to specify then we use NAME_None, Place where to grab it, rotation of the component that should be applied after the grab)
+
+after this we gotta be setting the target location in the tickcomponent 
+we wanna set it only if it has been firstly grabbed
+so:
+
+if (physicsHandle->GetGrabbedComponent() != nullptr) {
+	FVector TargetLocation = GetComponentLocation() + GetForwardVector() * HoldDistance;
+	physicsHandle->SetTargetLocationAndRotation(TargetLocation, GetComponentRotation());
+}
+
+function GetGrabbedComponent() returns nullptr if nothing is grabbed
+
+SetTargetLocationAndRotation(targetlocation, rotation that we wanna apply to the grabbed element)
+
+it would be good not to change the rotation after the grab (e.g. if it was facing towards us, after the grab it should remain like that, in order to achieve that, the rotation that we are going to be applying will be equal to the rotation of our current component (e.g. grabber)
