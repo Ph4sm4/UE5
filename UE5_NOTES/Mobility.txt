@@ -1,0 +1,1 @@
+Component>SetMobility(EComponentMobility::Movable);
