@@ -14,3 +14,6 @@ then we can disable physics, by:
 
 Component->SetStimulatePhysics(false);
 
+
+
+you gotta make sure that if overlapping actor did not exist then we gotta set should move to false, otherwise the engine is going to crash

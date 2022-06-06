@@ -10,5 +10,6 @@
 	- set the target location (start + offset)
 	- speed (by how much should we move during this tick) distance between current and target 		location / movespeed
 	- new location is gonna be obv a FVector = FMath::VInterpConstantTo(currLocation, Targetlocation, DeltaTime, speed);
+	- FMath::VInterpConstantTo is a shorthand for vector interpolation from start position to the target position with a constant step (speed)
 
 5. set the actor location by GetOwner()->SetActorLocation(newLocation);
