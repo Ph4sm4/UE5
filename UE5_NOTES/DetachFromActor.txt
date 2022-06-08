@@ -1,0 +1,3 @@
+hitResult.GetActor()->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+so basically AActor*->...
