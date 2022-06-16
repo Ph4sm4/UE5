@@ -1,0 +1,15 @@
+EditAnywhere
+
+VisibleInstanceOnly
+
+VisibleAnywhere
+
+VisibleDefaultsOnly
+
+EditDefaultsOnly
+
+EditInstanceOnly
+
+BlueprintReadWrite (only for public members, or with meta = (AllowPrivateAccess = "true"))
+
+BlueprintReadOnly (only for public members, or with meta = (AllowPrivateAccess = "true"))

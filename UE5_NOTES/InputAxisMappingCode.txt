@@ -1,0 +1,41 @@
+in order to bind an axis mapping you first of all have to go into project setting->input->axis mappings and add a mapping
+
+bind it to whatever key you want
+
+the scale property might be useful in terms of moving forward, for example:
+
+when we are pressing 2 keys at a time (w, s) then we do not wanna move (the mapping would have 2 keys -> w, s with a scale 1.0 and -1.0) now after pressing those 2 keys the value is gonna get combined into one:
+
+1.0 + (-1.0) = 0.0
+
+so basically the scale is determining the strength of the action/movement
+
+after creating a mapping we can bind that mapping to a function (the class having the function must be a type that has the ability to receive input, for instance Pawn)
+
+it has a function SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+
+the body of it:
+void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+}
+
+in it we can bind whatever we want
+
+we do it by:
+
+PlayerInputComponent->BindAxis(TEXT("NAME OF THE MAPPING"), the object to bind it to (can be "this"), the function with the address of)
+
+for instance:
+
+
+PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::Move);
+
+keep in mind that the Move function has to receiver a float parameter (Scale/Value) and its of type void
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+every pawn has a property called RootComponent, and as it seems, it is the root component of the pawn
+we can set it to be anything else just be reassigning it to another pointer, for instance a pointer of class UCollisionComponent

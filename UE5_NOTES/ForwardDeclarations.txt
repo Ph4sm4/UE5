@@ -1,0 +1,7 @@
+to avoid copying unnecessary header files, we should only include them in places where we need them, usually in the .cpp files, but for instance for inheritance we need to include them in .h
+
+otherwise, if we want to have a capsule component, then we can just store a pointer to it with a forward declaration of certain type:
+
+class UCapsuleComponent* CapsuleComp;
+
+and later in the .cpp we gonna have to include the proper header file 

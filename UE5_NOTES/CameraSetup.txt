@@ -1,0 +1,16 @@
+camera - UCameraComponent
+spring arm - USpringArmComponent
+
+in order for it to work properly, we should always attach the camera to the spring arm, as it has a lot of important, built-in features
+
+the way we do that is:
+
+SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
+SpringArmComp->SetupAttachment(RootComponent);
+
+CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+CameraComp->SetupAttachment(SpringArmComp);
+
+in the header file remember about forward declaration using the "class" keyword prefix
+
+also it is good to enable displaying it to the unreal editor by passing the VisibleAnywhere for UPROPERTY()

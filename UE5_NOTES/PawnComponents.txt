@@ -1,0 +1,13 @@
+all of them have to be prefixed with UPROPERTY(), otherwise they won't get displayed in the unreal engine editor
+
+to create one we first have to specify the type (if it is not included by default we have to forward declare it in the header file using "class" keyword prefix) for example:
+
+UCapsuleComponent* CapsuleComp;
+
+and then in the constructor of the class:
+
+CapsuleComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("NAME OF THE COMPONENT"));
+
+if we would like to attach the component somewhere we have the option to, do the following:
+
+CapsuleComp->SetupAttachment(Component_To_Attach);
