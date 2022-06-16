@@ -1,0 +1,13 @@
+1. we have to have the actor first or a pointer to the actor
+2. GetActor()->Tags.Add("name of the tag here");
+
+3. GetActor()->Tags.Remove("name of the tag"); 
+.Remove() will remove all occurences of the item which was specified
+
+
+if you are looking for the grabbed component
+first u gotta take the physics handle pointer and get grabbed component()
+
+after that 
+
+you gotta take the owner of that component, and from there you can access the .Tags property on which you can .Remove("tag"), or .Add("tag");
