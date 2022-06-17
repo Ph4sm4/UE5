@@ -1,0 +1,9 @@
+to create a timer we need a FTimerHandle, this is gonna be responsible for tracking THIS PARTICULAR timer, thanks to that, we can have mulitple timers at the same time
+
+to set the timer we need to call a function GetWorldTimerManager().SetTimer
+
+first argument is the timer handle
+second is the class we want to bind the timer to
+third is the function that we wanna call
+forth is the interval duration
+fifth is whether we wanna loop the timer (if false, its gonna execute only once)

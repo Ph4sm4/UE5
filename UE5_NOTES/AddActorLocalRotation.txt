@@ -1,0 +1,17 @@
+just as we can move the actor relatively to its local location, we can rotate it around its local rotation
+
+we've gotta have a function and we have to bind it to the proper axis mappings
+
+the function body can look like this:
+
+void ATank::Turn(float Value)
+{
+	FRotator DeltaRotation = FRotator::ZeroRotator;
+	float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this);
+
+	DeltaRotation.Yaw = Value * DeltaTime * TurnRate;
+	AddActorLocalRotation(DeltaRotation, true);
+	
+}
+
+turn rate is basically telling us, by how much should we rotate every frame/every function call

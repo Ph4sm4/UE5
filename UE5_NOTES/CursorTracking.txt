@@ -1,0 +1,19 @@
+every possessable class (like Pawn) has something called a controller of type AController, it enables us to take controll over the pawn when we hit play
+
+firstly we have to create a pointer of type APlayerController, and in begin play() we have to cast the normal AController (which we can get using the function GetController(), it returns a pointer with type AController), to our APlayerController pointer, we can do that because AController is a parent class of APlayerController
+
+it has a child class of type APlayerController
+
+APlayerControlller enables us to get hold of a function called GetHitResultUnderCursor
+
+syntax:
+bool HasHit = PlayerController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, 
+			false, HitResult);
+
+the first parameter is the collision channel, the second is whether to use simplified or complex collision (for performance sake, it is better to use simplified collision when line tracing), and the third one is a FHitResult (cause we are doing a line trace, the start point is the camera, the end point is the location of the cursor)
+
+and then, for instance, we can draw a debug sphere just like so:
+
+DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 50, 10, FColor::Emerald);
+
+in this case we wanna do this every tick

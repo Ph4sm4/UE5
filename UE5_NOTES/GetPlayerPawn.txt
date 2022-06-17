@@ -1,0 +1,5 @@
+to get the player's pawn, e.g. the pawn that the player is controlling, we have to use the function GetPlayerPawn available in UGameplayStatics class
+
+we gotta do the following:
+
+UGameplayStatics::GetPlayerPawn(the world context (can be "this"), index (for singleplayer games its always gonna be 0));

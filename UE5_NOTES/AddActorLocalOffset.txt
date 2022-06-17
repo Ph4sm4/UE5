@@ -3,3 +3,11 @@ using function AddActorLocalOffset we can move the actor in its own local direct
 it takes one obligatory parameter which is a FVector DeltaLocation (the vector offset by which we wanna move)
 
 we usually would use it in the tick function, or bind it into an input mapping
+
+good practice is to setup DeltaLocation vector's X,Y,Z so that they are framerate independent:
+
+float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this);
+DeltaLocation.X = Value * DeltaTime * Speed;
+
+
+GetWorldDeltaSeconds(the world that we are in)
