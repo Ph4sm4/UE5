@@ -15,3 +15,5 @@ void ATank::Turn(float Value)
 }
 
 turn rate is basically telling us, by how much should we rotate every frame/every function call
+
+DONT FORGET TO INCLUDE SWEEPING, E.G. THE SECOND PARAMETER MUST BE TRUE, OTHERWISE COLLISION WON'T WORK

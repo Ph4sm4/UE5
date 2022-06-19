@@ -11,3 +11,5 @@ DeltaLocation.X = Value * DeltaTime * Speed;
 
 
 GetWorldDeltaSeconds(the world that we are in)
+
+DONT FORGET TO INCLUDE SWEEPING, E.G. THE SECOND PARAMETER MUST BE TRUE, OTHERWISE COLLISION WON'T WORK

@@ -1,0 +1,7 @@
+there is an already built-in component that helps us deal with projectiles, it is called: UProjectileMovementComponent
+
+We have to create it in the contructor as a normal component (using CreateDefaultSubobject)
+
+it has its initialspeed, maxspeed that can be set
+
+it makes the projectile fly, up until it hits something (it is exposed to gravity)

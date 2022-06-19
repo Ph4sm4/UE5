@@ -31,7 +31,7 @@ for instance:
 
 PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::Move);
 
-keep in mind that the Move function has to receiver a float parameter (Scale/Value) and its of type void
+keep in mind that the Move function has to receive a float parameter (Scale/Value) and its of type void
 
 
 

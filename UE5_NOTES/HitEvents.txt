@@ -1,0 +1,24 @@
+UStaticMeshComponent has an ability to detect Hit Events (Multicast Delegates)
+
+it has to be bound in the constructor
+
+So Basically:
+
+(UStaticMeshComponent*)
+ProjectileMesh->OnComponentHit.AddDynamic(object ("this"), address of the function to bind);
+
+it has an invocation list (list of functions to call)
+broadcast when something happens (a hit) so that, all functions that are bound to this component multicast delegate, are called
+
+it is required for the callback function to have specific parameters
+
+these are, in order:
+
+UPrimitiveComponent* HitComp (component of from our class that has been hit)
+AActor* OtherActor (actor that has been hit)
+UPrimitiveComponent* OtherComp (component of that actor, that has been hit)
+FVector NormalImpulse (if simulating physics, this will represent the impulse vector that has been added to our object, for example it will bounce)
+const FHitResult HitResult
+
+
+THIS FUNCTION HAS TO BE A UFUNCTION() !!!!!!!!!!!!!!!!!!!!!!

@@ -1,0 +1,16 @@
+to spawn an actor into our scene we need to use a function
+
+called UWorld::SpawnActor<>();
+
+syntax:
+GetWorld()->SpawnActor<C++ class>(UClass, location, rotation);
+
+UClass is a special type that allows us to communicate and exchange informations between c++ and blueprints
+
+to hold a variable which would represent our blueprint for instance, we need to use: 
+
+TSubclassOf<class> _Name;
+
+we should keep in my mind to expose it to blueprints UPROPERTY(), and from there set the variable's origin
+
+this way we can set the variable to be a blueprint that has all the things set up (for example meshes)
