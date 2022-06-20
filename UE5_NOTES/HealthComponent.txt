@@ -1,0 +1,16 @@
+this component does not to be visible, nor possessed. we dont care about its location/rotation etc. thats why it should be a UActorComponent 
+
+after creation we have to bind (in begin play) our function DamageTaken to a delegate
+we want to bind it to the owner, as it will be the one taking damage:
+
+GetOwner()->OnTakeAnyDamage.AddDynamic("object", function address);
+
+BUT, the function itself needs to have specific parameters!!!!
+
+these are, in order:
+
+AActor* DamagedActor
+float Damage
+const UDamageType* DamageType (in unreal we can have custom damage types, like fire, heat, cold etc...)
+AController* Instigator (this is the controller responsible for damage, for example if the pawn that is being possessed caused the damage, then the instigator would be the controller of that pawn)
+AActor* DamageCauser

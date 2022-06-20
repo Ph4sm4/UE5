@@ -1,0 +1,27 @@
+in order to apply damage we first need to setup onhitevent on the projectile, as well as ontakeanydamage delegate on the health component
+
+WE SHOULD ALSO KEEP IN MIND TO SET THE OWNER OF THE PROJECTILE, WHENEVER IT IS FIRED (using the function *Projectile->SetOwner(this);
+
+after that it just comes to setting up the bodies of the functions (damagetaken, onhit):
+
+Damage taken we will probably just decrease the health
+
+onhit on the other hand:
+- we should first get the owner of the projectile, and check if it has an owner
+- if so, then we have to get the instigator of our owner (our owner's controller)
+- in order to apply damage, we need a damage type variable, we don't have a custom UDamageType Class so we can fulfill this requirement by calling UDamageType::StaticClass(), which returns a UClass pointer, which can then be passed into the apply damage function
+- after that we want to check (just in case) if the OtherActor != nullptr, if the OtherActor != this, as we dont want to damage ourselves (the projectile), and lastly we have to check if the actor that has been hit (OtherActor) is not our Owner as we do not want to damage ourselver/our player
+
+after all this crap, we can finally call UGameplayStatics::ApplyDamage function and pass all the parameters as follows:
+
+			in the toon tanks case:
+DamagedActor			OtherActor
+Damage				Damage
+Instigator			MyOwnerInstigator
+DamageCauser			this
+DamageType			DamageTypeClass
+
+
+and lastly, we should destroy the projectile after it has hit something (we dont want it to just lay down), we do that by calling
+
+Destroy();
