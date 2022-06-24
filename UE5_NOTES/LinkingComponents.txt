@@ -1,0 +1,5 @@
+If you have 2 actors living apart from each other in a level, and you want to link their components between them, you gotta do something alike dependency injection but on the level blueprint
+
+1. get a reference to both actors that you want to link (by clicking on it in the level, going to blueprint, right clicking and it will appear on top)
+
+2. get the component by class (your own classes) and then dependency injection as given

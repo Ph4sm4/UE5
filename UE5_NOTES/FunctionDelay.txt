@@ -1,0 +1,21 @@
+FTimerHandle DelayTimer, DelayLocalTimer; -> these are our timers
+
+GetWorld()->GetTimerManager().SetTimer(DelayLocalTimer, this, &UWeightTrigger::DelayedLocalMove, 1.0f, false);
+
+
+GetWorld()->GetTimerManager().SetTimer(DelayTimer, this, &UWeightTrigger::DelayedMove, 5.0f, false);
+
+1st argument is the timer which we wanna initiate
+2nd argument is the class instance on which we wanna set the timer
+3rd argument is the function that we wanna repeat/delay
+4th argument is the delay after which our function is gonna fire off for the first time
+5th argument is a boolean determining whether we wanna loop the timer or not
+6th argument (not shown here) is the interval time in seconds (every x seconds the function fires off)
+
+in order to stop the timer we gotta call:
+
+GetWorld()->GetTimerManager().ClearTimer(FTimerHandle &x);
+
+or there is also a function which clears all timers that are bound to function on a given object:
+
+GetWorld()->GetTimerManager().ClearAllTimersForObject(Object); -> (Object can be "this")
