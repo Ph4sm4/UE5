@@ -1,0 +1,23 @@
+first, it obviously derives from APlayerController class
+
+in our case, we use it to enable/disable input, show the mouse cursor, set the mouse cursor type (in our case its a crosshair)
+
+basically the player is enabled when being alive, when the player dies, it becomes disabled and so it should not response to any player input
+
+it has one function SetPlayerEnabledState(bool bPlayerEnabled);
+
+it's body:
+
+void AToonTanksPlayerController::SetPlayerEnabledState(bool bPlayerEnabled)
+{
+	if (bPlayerEnabled) {
+		GetPawn()->EnableInput(this); //it returns the pawn that it is controlling
+	}
+	else {
+		GetPawn()->DisableInput(this);
+	}
+
+	bShowMouseCursor = bPlayerEnabled;
+}
+
+to use this player controller, we need to change it in our custom gamemode blueprint

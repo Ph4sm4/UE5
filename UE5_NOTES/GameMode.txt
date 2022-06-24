@@ -1,0 +1,6 @@
+there is a class called AGameModeBase
+
+we can create a blueprint based on that class
+
+to use it, we have to go into project settings->maps and modes and set the default gamemode class
+
