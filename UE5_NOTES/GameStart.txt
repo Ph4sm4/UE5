@@ -1,0 +1,25 @@
+we dont want the player to move immedietaly after hitting the play button, we want him to move after certain amount of time
+to do that, we have to make changes to the toonktanksgamemode class, as it describes the rules of the game
+
+we can create a handlegamestar() function, as well as a float StartDelay = 3 //seconds
+
+so basically, what we want to achieve is:
+- disable the input right at the start
+- wait 3 seconds
+- enable the input
+
+so to do that, we have to first ccall ToonTanksPlayerController->SetPlayerEnabledState(false); // to disable the input, so that player won't move
+
+next we have to start the timer, but this time we are going to bind a function that takes a parameter, so we need to use something called a FTimerDelegate which can handle this kind of stuff
+
+so, we do as follows:
+
+FTimerDelegate TimerDelegate = FTimerDelegate::CreateUObject(user object (in our case its the player controller, as after 3 seconds we wanna call the function SetPlayerEnabledState(true), which belongs to it), address of the function to bind, and after that comma we put any additional parameters which we would like to pass in as function arguments, so in our case, its just gonna be "true");
+
+then we can finally set the timer:
+
+GetWorldTimerManager().SetTimer(PlayerEnabledTimerHandle (of type FTimerHandle), TimerDelegate, StartDelay, false);
+the last parameter is whether to loop or not -> we dont want to loop as we wanna enable the input only once (after the game finally starts) 
+
+
+and lastly we can move previous casts from begin play into handlegamestart as its just gonna look better this way -> we will handle everything in the handlegamestart function

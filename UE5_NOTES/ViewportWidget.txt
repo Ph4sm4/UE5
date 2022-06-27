@@ -1,0 +1,31 @@
+if we were to display a "Get Ready!" text, before our game starts, we need to create a viewport vidget
+
+we do that by creating a new widget blueprint, prefix of the name is WBP_
+
+we create that and add a canvas panel
+
+from there we can drag stuff into the panel and edit them
+
+after we create our widget blueprint, we need to hook up to our function StartGame(), which is a BlueprintImplementableEvent
+
+and in the event graph we use Create Widget Function -> then connect the execution and the return pin to the Add Tp Viewport function
+
+furthermore, we can hop into the event graph of the widget blueprint (top right corner), and define the logic, i.e. the countdown timer
+
+so we can subtract from the countdown float = 3.f the delta time variable from the event tick function, next we have to set it back, and ceil up cause its a float (and we want integers)
+
+then we can call switch on int and define what happens for each second, i.e. 0, 1, 2, 3
+
+we can set the text on the widget by:
+-first, we have to mark this element as a variable (top right corner, "Is Variable" checkbox)
+-then we acccess it as a normal variable, and we can get the value of that element by dragging it into the event graph and call function SetText
+
+
+in order to delete a widget, we can call RemoveFromParent
+
+
+TO BE ABLE TO SEE THE WIDGET, WE HAVE TO GO TO THE BP_GAMEMODE EVENT GRAPH!!!
+
+and there define whats gonna happen when the StartGame() (BlueprintImplementableEvent) function is gonna fire
+
+in our case, we want to create a widget from our wbp class and after that we gotta add it to the viewport
