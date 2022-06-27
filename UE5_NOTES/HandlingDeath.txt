@@ -1,0 +1,24 @@
+to handle destruction on our pawns we first need to have a function on them called HandleDestruction(), first we call Super::HandleDestruction(), and then we move with the body
+
+for the turret, we wanna just destroy it, but for the tank, we wanna make it disappear, and disable ticking
+
+to handle death, we want an ActorDied() function in our gamemode class, which is going to take AActor* DeadActor
+
+in the toon tanks example, the body of it was:
+
+void AToonTanksGameMode::ActorDied(AActor* DeadActor)
+{
+	if (DeadActor == Tank) {
+		Tank->HandleDestruction();
+		if (ToonTanksPlayerController) { //to use it we need to define a ToonTanksPlayerController* and cast it to the proper type in begin play, we get that from UGameplayStatics::GetPlayerController(world context, index)
+			ToonTanksPlayerController->SetPlayerEnabledState(false);
+		}
+	}
+	else if (ATurret* DestroyedTower = Cast<ATurret>(DeadActor)) { //if it is a Tower it is gonna return the pointer to that tower, and the condition will be true, otherwise its gonna return nullptr
+		DestroyedTower->HandleDestruction();
+	}
+}
+
+but first, we had to declare a private variable ATank* Tank, which we had gotten from UGameplayStatics::GetPlayerPawn in begin play
+
+furthermore, in health component, damage taken function we can call actor died, from the toontanksgamemode pointer, which we had gotten from the UGameplayStatics::GetGameMode(world context). we had to obviously cast it in begin play to the proper type
