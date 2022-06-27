@@ -6,6 +6,9 @@ after that it just comes to setting up the bodies of the functions (damagetaken,
 
 Damage taken we will probably just decrease the health
 
+the required parameters in this function are:
+AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* Instigator, AActor* DamageCauser
+
 onhit on the other hand:
 - we should first get the owner of the projectile, and check if it has an owner
 - if so, then we have to get the instigator of our owner (our owner's controller)

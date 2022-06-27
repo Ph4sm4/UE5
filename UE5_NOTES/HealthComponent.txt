@@ -5,7 +5,7 @@ we want to bind it to the owner, as it will be the one taking damage:
 
 GetOwner()->OnTakeAnyDamage.AddDynamic("object", function address);
 
-BUT, the function itself needs to have specific parameters!!!!
+BUT, the function itself needs to have specific parameters and be a UFUNCTION()!!!!!
 
 these are, in order:
 

@@ -5,3 +5,5 @@ We have to create it in the contructor as a normal component (using CreateDefaul
 it has its initialspeed, maxspeed that can be set
 
 it makes the projectile fly, up until it hits something (it is exposed to gravity)
+
+#include "GameFramework/ProjectileMovementComponent.h"

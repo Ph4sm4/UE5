@@ -18,7 +18,7 @@ UPrimitiveComponent* HitComp (component of from our class that has been hit)
 AActor* OtherActor (actor that has been hit)
 UPrimitiveComponent* OtherComp (component of that actor, that has been hit)
 FVector NormalImpulse (if simulating physics, this will represent the impulse vector that has been added to our object, for example it will bounce)
-const FHitResult HitResult
+const FHitResult &HitResult
 
 
 THIS FUNCTION HAS TO BE A UFUNCTION() !!!!!!!!!!!!!!!!!!!!!!
