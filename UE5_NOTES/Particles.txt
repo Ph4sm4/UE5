@@ -1,0 +1,14 @@
+first of all, in order to spawn particles on a given actor, we need a variable of type
+
+UParticleSystem* Particles;
+we should expose it to blueprints, so that we can edit its value in the editor, and set to a certain particle effect
+
+then, we can spawn that effect with a use of:
+
+UGameplayStatics::SpawnEmitterAtLocation(this, Particles,
+		GetActorLocation(), GetActorRotation());
+
+first argument is world context
+second argument is the projectile system variable
+third argument is the location on which the effect should be spawned
+forth argument is the rotation with which the particle should be spawned

@@ -1,0 +1,13 @@
+in order to smoothen out the camera movement we can set some lag on the spring arm component
+
+camera lag is responsible for the camera movement so basically when we are moving across the world the movement is gonna be a bit lagged
+
+camera rotation lag is responsible for the rotation, so basically when we are looking around the world, the rotation of the camera is gonna be bit lagged
+
+
+there are variables:
+
+camera lag speed
+camera rotation lag speed
+
+the smaller the values are, the stronger the lag will be

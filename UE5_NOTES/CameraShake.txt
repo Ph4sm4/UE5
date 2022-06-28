@@ -1,0 +1,35 @@
+in order to make the camera shake we first to create our blueprints of those shakes
+
+the blueprint class will be the matineecamerashake
+
+in the blueprint of that particular camera shake we have to experiment with:
+-oscillation duration (how long is the shake going to last)
+-oscillation blend in time (how long does it take to get into the shake)
+-oscillation blend out time (how long does it take to get out of the shake)
+
+(throughtout, the duration of blend in/out, the shake is going to get more and more/less and less rapid and strong, so its basically preparing for the main shake and making everything smooth)
+
+and then we can experiment with types of oscillation (rot, loc, fov)
+
+-> rot (the shake is going to affect the rotation of the camera, so we can achieve an effect of getting hit by a car)
+
+-> loc (the shake is going to affect the location of the camera, so we can achieve an effect of an earthquake for instance)
+
+-> fov (the shake is going to affect the field of view, so basically it means zooming in/out)
+
+the amplitude is the strength of the shake
+
+the frequency is the number of shakes that are going to happen (i.e. how many changes the camera is going to do, throughout the duration of the shake)
+
+
+
+after that in code we need to create a TSubclassOf variable and the subclass class is going to be UCameraShakeBase, we need to set that variable in blueprints, and select the desired camera shake
+
+in order to actually "play" the shake, we need to use the function available in the APlayerController class called ClientStartCameraShake(TSubclassOf<UCameraShakeBase>);
+
+
+so we can do it many ways, one way is to get the first player controller and call that function:
+
+its obviously nice to check if that shake is not a nullptr ;)
+
+GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(TSubclassOf<UCameraShakeBase>);

@@ -1,0 +1,7 @@
+in order to play a sound we first need to create a variable of type USoundBase*
+
+we gotta expose it to blueprints and set the sound that we want
+
+next, in order to play a sound, we have to use a function UGameplayStatics::PlaySoundAtLocation(world context, sound base* variable, location);
+
+of course it has more overloads than that, but imma go deeper later on

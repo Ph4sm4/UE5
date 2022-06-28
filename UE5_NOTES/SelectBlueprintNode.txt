@@ -1,0 +1,9 @@
+there is a nice way to set some values depending on the input
+
+for example, if we have a boolean that determines the text, i.e. to be "ONE" or "TWO", instead of using the BRANCH node, we can use the SELECT node
+
+first we need to change the return type to be text, plug the boolean value
+
+and set the texts, on true and false conditions
+
+the thing that is gonna get returned is the text that we have set on those conditions

@@ -1,0 +1,37 @@
+so why do we call Super::BeginPlay(), or in my case what i was trying to explain to myself was why are we getting the projectile particle effect even if we have overriden the function HandleDestruction() in the derived classes, i.e. Tank and Turret
+
+the answer is pretty simple
+
+in both implementations of that function in the Tank and Turret class, before the function body, we have called Super::HandleDestruction();
+
+and this is the reason why we got the particles (which where defined in the parent class)
+
+because calling Super::function_name calls any functionality that has been defined in the parent's version of that function (before the override)
+
+example:
+
+class AEnemy : public ACharacter
+{
+    virtual void Speak()
+    {
+        Say("Time to fight!");
+    }
+};
+
+class AMegaBoss : public AEnemy
+{
+    virtual void Speak()
+    {
+        Say("Powering up! ");
+        Super::Speak();
+    }
+};
+
+
+As you can see, calling Speak will result in the MegaBoss saying "Powering up! Time to fight!".
+
+
+
+
+
+

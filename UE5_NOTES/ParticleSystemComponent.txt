@@ -1,0 +1,7 @@
+there is a class UParticleSystemComponent which enables having particles that follow the actor, it has a variable called template which lets us set it to a desired particle effect
+
+in order to create it we need a UParticleSystemComponent* ParticleComponent
+
+in the actor's contructor we need to create default subobject of UParticleSystemComponent class
+
+after that, we can setup the attachment to the root of the component and from there we gotta go into the editor, into the actor's blueprint and set the template variable to the desired particle effect

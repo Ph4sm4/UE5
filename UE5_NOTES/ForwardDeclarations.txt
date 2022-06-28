@@ -5,3 +5,15 @@ otherwise, if we want to have a capsule component, then we can just store a poin
 class UCapsuleComponent* CapsuleComp;
 
 and later in the .cpp we gonna have to include the proper header file 
+
+BUT BUT BUT if we have for example 2 variables of the same forward declared type
+
+we only need to forward declare it for the first time when we use it
+
+for example 
+
+class XYZ var1;
+
+XYZ var2; //no need of forward declaration
+
+that is why, it is good practice to forward declare types after includes, so that we can use that type anywhere in the file

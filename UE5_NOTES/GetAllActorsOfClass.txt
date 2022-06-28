@@ -1,0 +1,15 @@
+in order to get all instances of a class we have to use a function called 
+
+GetAllActorsOfClass that exists in the UGameplayStatics
+
+so: 
+
+UGameplayStatics::GetAllActorsOfClass(world context ("this"), UClass (so we can call for example ATurret::StaticClass(), and it will return the required uclass), TArray<AActor*> &OutActors);
+
+after that the number of actors of a particular class can be taken from OutActors.Num();
+
+from there we can determine winning/losing conditions, for instance if we died then we can call GameOver(false) // the parameter is whether we lost or won
+
+but to determine winning, we can have a variable that is set to the number of actors, and can be decremented every time the actor of that class is killed, in our case the turrets
+
+if the value of that variable reaches 0, then we have won the game
