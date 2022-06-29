@@ -1,0 +1,7 @@
+go to the material graph that you have a problem with
+
+select the normal map
+
+open the normal map texture
+
+check the "Flip Green Channel" checkbox

@@ -1,0 +1,34 @@
+constant 3 vector -> colors
+
+constant -> a normal value, used in roughness for instance
+
+roughness -> accepts a constant, the smaller the value, the more shiny the texture will be
+
+metallic -> accepts a constant, the greater the value, the more metallic the texture will be
+
+linear interpolate -> enables to mix 2 textures into one, depending on the alpha value, and then outputs the result
+
+normal -> applyies deapth to the texture (normal map is needed)
+
+texture scaling -> texture coordinate -> multiply (needs a constant by which we gonna multiply) -> apply the return value to the UVs
+
+we can also multiply the colors, by having a constant 3 vector, and multiplying it by the rgb ouput
+
+in order to avoid compiling the shader every time we make a change, we can create a material instance which will have all the variables, and changes will be applied on the go
+
+to expose a variable we right click on the node we want to expose and we click convert to parameter
+
+to make the normal map stronger we can use the flattennormal node, which takes the rgb from the normal map, and we multiply that by a constant scalar value
+
+a master material is basically a material from which are created multiple instances, varying from wood, brick, concrete, to anything else. they are created using variables only, thats why they can vary so much. all values on parameters of the master material should be set to default values
+
+to switch metallic on and off we need a switch parameter, through which we are gonna put the rgb from metallic texture sample (if true), and (if false) we gonna put just a basic constant of value 0
+
+a typicall master material is going to have the following:
+
+color tint (constant 3 vector)
+size (multiplier)
+color (texture sample)
+metallic (texture sample; with a switch)
+roughness (texture sample)
+normal map (with a multiplier (flattennormal))

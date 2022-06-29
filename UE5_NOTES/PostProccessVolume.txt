@@ -1,3 +1,7 @@
 brush settings are to change its size
 
 metering mode -> auto exposure basic
+
+but, it only works when the camera is inside, and also the game settings gotta be turned on, somewhere in the right corner
+
+in order it to work everywhere, the "infinite extent (unbound)" has to be checked
