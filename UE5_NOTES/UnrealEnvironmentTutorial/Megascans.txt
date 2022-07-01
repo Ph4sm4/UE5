@@ -1,0 +1,52 @@
+content browser -> add -> add quixel content
+
+DRAG WHATEVER YOU LIKE :))))))))))))
+
+fucking amazing
+
+
+
+specular from albedo override -> make it greater, rocks will appear less shiny
+
+the most useful are albedo tint and albedo controls, experiment with those ;)
+
+all kinds of foliage have this property called enable grass wind (on its material instance), which (obviously) enables wind-like movement
+
+
+to paint with foliage, go to foliage mode (if not seeing the assets, gotta locate them in the content browser and select the desired one and drag them into the window), and select the asset you wanna paint with, and to activate painting with it you gotta check the box in top left corner of the icon
+
+
+to erase some area covered in foliage, gotta hold shift and select the asset you wanna delete
+
+to make foliage more real we should also randomize the size by going into the scale X and setting the minimum and maximum value (make sure scaling is set to uniform, so that the asset will scale in every axis (X,Y,Z) by the same value)
+
+
+
+we can select and make active multiple assets at once just by selecting the first one, holding shift and selecting the last one, this also applies to activating them by click the checkbox in the top left corner
+
+
+another great thing is that if we are to paint on top of a rock for instance, the foliage will be applied on top of it!!!!!!!!!!! but only when we have the static meshes checkbox checked (in the foliage filters)
+
+
+static meshes have this option called NANITE, it improves performance like hell!
+to enable it just open the asset edit mode and check "enable nanite support" checkbox
+DONT FORGET TO APPLY CHANGES!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

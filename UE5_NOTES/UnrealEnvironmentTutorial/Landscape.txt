@@ -7,3 +7,5 @@ smooth brush -> smoothes the edges of the hills
 flatten brush -> flattens the area, making, for example a top of the hill, completely flat, by leveling up the terrain underneath
 
 TO EXPLORE: settings -> plugins -> landmass
+
+manage tab -> you can add/delete landscape tiles

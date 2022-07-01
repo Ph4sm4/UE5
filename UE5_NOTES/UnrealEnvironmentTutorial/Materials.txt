@@ -32,3 +32,26 @@ color (texture sample)
 metallic (texture sample; with a switch)
 roughness (texture sample)
 normal map (with a multiplier (flattennormal))
+
+
+
+to make the materials easier to read, we can create sub materials and then blend them together
+
+we do it by checking use material attributes 
+
+and then, creating seperate materials first, and later blending them with a layer blend node
+
+
+in order to comment a block of nodes we need to first mark the area of the comment, and press the 'C' key
+
+
+
+
+
+
+
+
+
+
+
+
