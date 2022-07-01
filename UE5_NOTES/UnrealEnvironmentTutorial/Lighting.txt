@@ -1,0 +1,60 @@
+so, basically...
+
+lightmass -> the process of baking light
+
+lightmass importance volume -> 
+Many maps have meshes out to the edge of the grid in the editor, but the actual playable area that needs high quality lighting is much smaller. Lightmass emits photons based on the size of the level, so those background meshes will greatly increase the number of photons that need to be emitted, and lighting build times will increase. The Lightmass Importance Volume controls the area that Lightmass emits photons in, allowing you to concentrate it only on the area that needs detailed indirect lighting. Areas outside the importance volume get only one bounce of indirect lighting at a lower quality.
+
+
+lightmass portals (volumes) -> generally, they describe the areas from which the lighting is coming so it is good to place them in places like windows, and corridors
+
+When gathering lighting, Lightmass can backtrack to Point, Spot and Directional light sources using photons from the Photon Mapping technique. This means that it can find small windows where light is entering from these light types and resolve the incoming lighting with high-quality. However, SkyLights and Emissive meshes don't support photon emission efficiently, so Lightmass can only find the small important lighting features with brute force. This manifests as splotchy artifacts around indoor corners. To help Lightmass better understand where the light should be coming from, you can place Lightmass Portals Actors around the areas that are critical to lighting. In the following document, we will take a look at setting up and using Lightmass Portals in your Unreal Engine 4 (UE4) projects.
+
+
+if the quality of the particular object is bad, we can improve it by changing the Overridden light map resolution in the object's details panel -> lighting. but keep in mind that the value should/must be a power of 2
+
+
+
+
+
+
+CTRL + L -> change the direction of the sun
+
+
+
+to create a basic level lighting:
+
+- directional light
+- sky light
+- sky atmosphere
+- exponentialheightfog
+- project settings -> fog -> support sky atmosphere affecting height fog -> true
+- fog inscattering color -> black
+- directional inscattering -> black
+- sky light -> real time capture -> true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+landscape technical guide (ue5 docs)
+
+sculpt brush -> level up the terrain using left mouse button, shift + left mouse button, decreases the terrain level
+
+smooth brush -> smoothes the edges of the hills
+
+flatten brush -> flattens the area, making, for example a top of the hill, completely flat, by leveling up the terrain underneath
+
+TO EXPLORE: settings -> plugins -> landmass
